@@ -3,11 +3,10 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
     container: {
     flex: 1,
-    backgroundColor: '#FFF6D5',
-    alignItems: 'center',
-    },
-    card: {
-    flexDirection: 'row',
+    backgroundColor: '#FFF6D5', // fundo amarelo suave
+    padding: 10,
+  },
+  card: {
     backgroundColor: '#FFFFFF',
     borderRadius: 12,
     padding: 10,
@@ -24,7 +23,7 @@ export const styles = StyleSheet.create({
     borderRadius: 35,
     marginRight: 12,
     borderWidth: 2,
-    borderColor: '#004AAD', // azul Digimon
+    borderColor: '#004AAD',
   },
   info: {
     flex: 1,
@@ -37,6 +36,7 @@ export const styles = StyleSheet.create({
   level: {
     fontSize: 14,
     color: '#666',
+    alignSelf: 'center'
   },
   center: {
     flex: 1,

@@ -4,16 +4,24 @@ import api from '../services/api';
 import styles from './styles';
 
 export default function DigiList() {
-  const [digimons, setDigimons] = useState([]);
+  interface Digimon {
+      id: number;
+      name: string;
+      image: string;
+      levels?: { level: string }[];
+    }
+  const [digimons, setDigimons] = useState<Digimon[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
   useEffect(() => {
     const fetchDigimons = async () => {
       try {
-        const response = await api.get('/digimon');
-        setDigimons(response.data);
+        const response = await api.get('/digimon?pageSize=20'); 
+       
+        setDigimons(response.data.content);
       } catch (err) {
+        console.error(err);
         setError('Erro ao carregar Digimons 😢');
       } finally {
         setLoading(false);
@@ -43,13 +51,13 @@ export default function DigiList() {
     <View style={styles.container}>
       <FlatList
         data={digimons}
-        keyExtractor={(item, index) => index.toString()}
+        keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
           <View style={styles.card}>
-            <Image source={{ uri: item.img }} style={styles.image} />
+            <Image source={{ uri: item.image }} style={styles.image} />
             <View style={styles.info}>
               <Text style={styles.name}>{item.name}</Text>
-              <Text style={styles.level}>{item.level}</Text>
+              <Text style={styles.level}>{item.levels?.[0]?.level || 'Sem nível'}</Text>
             </View>
           </View>
         )}
