@@ -1,5 +1,5 @@
 import { Image } from "expo-image";
-import { View } from "react-native";
+import { TextInput, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import DigiList from "../components/DigiList";
 import styles from "./styles";
@@ -12,6 +12,9 @@ export function index() {
             <View style={styles.logoContainer}>
                 <Image style={styles.logo} source={require('./assets/images/logo.png')}/>
             </View>
+            <TextInput style={styles.inputStyle}
+                placeholder="pesquise por nome"
+            />
             <DigiList/>
         </SafeAreaView>
     )

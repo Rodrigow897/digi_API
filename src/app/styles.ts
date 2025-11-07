@@ -61,6 +61,14 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     color: 'red',
   },
+  inputStyle:{
+    marginTop: 10,
+    width: '92%',
+    borderWidth: 1,
+    borderColor: '#918e8eff',
+    borderRadius: 10,
+    paddingHorizontal: 5
+  }
 });
 
 export default styles;
