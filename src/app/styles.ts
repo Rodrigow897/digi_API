@@ -1,75 +1,86 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet } from 'react-native';
 
-export const styles = StyleSheet.create({
-    container: {
+export default StyleSheet.create({
+  container: {
     flex: 1,
-    backgroundColor: '#FFF6D5',
+    backgroundColor: '#fff',
+  },
+
+  header: {
     alignItems: 'center',
+    paddingVertical: 20,
   },
-  logoContainer: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: '100%',
-    height: 156,
-    backgroundColor: '#88b5f0ff',
-    borderRadius: 20,
-    boxShadow: '#043779ff',
-    elevation: 5
+
+  title: {
+    fontSize: 32,
+    fontWeight: 'bold',
+    color: '#222',
+    marginBottom: 10,
   },
-  logo: {
-    width: '100%',
-    height: 155,
-  },
-   card: {
+
+  searchContainer: {
     flexDirection: 'row',
-    backgroundColor: '#FFFFFF',
-    borderRadius: 12,
-    padding: 10,
-    marginVertical: 6,
     alignItems: 'center',
-    shadowColor: '#000',
-    shadowOpacity: 0.1,
-    shadowRadius: 5,
-    elevation: 3,
+    marginHorizontal: 20,
+    borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 12,
+    paddingHorizontal: 10,
   },
-  image: {
-    width: 70,
-    height: 70,
-    borderRadius: 35,
-    marginRight: 12,
-    borderWidth: 2,
-    borderColor: '#004AAD', // azul Digimon
-  },
-  info: {
+
+  input: {
     flex: 1,
+    height: 45,
+    fontSize: 16,
   },
-  name: {
+
+  button: {
+    padding: 8,
+  },
+
+  resultContainer: {
+    flex: 1,
+    paddingHorizontal: 10,
+    marginTop: 10,
+  },
+
+  listContainer: {
+    justifyContent: 'center',
+  },
+
+  card: {
+    flex: 1,
+    alignItems: 'center',
+    margin: 8,
+    borderRadius: 12,
+    paddingVertical: 10,
+    paddingHorizontal: 5,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+  },
+
+  digimonImage: {
+    width: 100,
+    height: 100,
+    resizeMode: 'contain',
+    marginBottom: 8,
+  },
+
+  digimonName: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#004AAD',
+    color: '#585858ff',
+    textShadowColor: 'rgba(0,0,0,0.3)',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 2,
   },
-  level: {
+
+  digimonTypes: {
     fontSize: 14,
-    color: '#666',
+    color: '#585858ff',
+    opacity: 0.8,
   },
-  center: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  errorText: {
-    fontSize: 16,
-    color: 'red',
-  },
-  inputStyle:{
-    marginTop: 10,
-    width: '92%',
-    borderWidth: 1,
-    borderColor: '#918e8eff',
-    borderRadius: 10,
-    paddingHorizontal: 5
-  }
 });
-
-export default styles;
-
